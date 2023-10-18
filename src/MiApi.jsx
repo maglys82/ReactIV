@@ -3,39 +3,51 @@ import React, { useState, useEffect } from 'react';
 function MiApi() {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
-
-    fetch('https://www.feriadosapp.com/api/')
+ if (loaded) {
+    fetch('https://api.victorsanmartin.com/feriados/en.json')
       .then((response) => response.json())
       .then((responseData) => {
-        setData(responseData);
+        setData(responseData.data);
         setLoading(false);
       })
+
       .catch((error) => {
         console.error('Error al obtener datos de la API:', error);
         setLoading(false);
       });
-  }, []);
-
-  if (loading) {
-    return <p>Cargando datos...</p>;
-  }
+    }
+  }, [loaded]);
 
   return (
     <div>
-      <h1>Datos de la API</h1>
-      <ul>
-        {data.map((item) => (
-          <li key={item.id}>{item.nombre}</li>
-          
-        ))}
-      </ul>
+      <button onClick={() => setLoaded(true)}>Comencemos</button>
+      {loaded && loading && <p>Cargando datos...</p>}
+      {loaded && !loading && (
+        <div>
+          <h3>Feriados </h3>
+          <ul>
+            {data.map((item) => (
+              <li key={item.date}> {item.title} {item.type} {item.extra}</li>))}
+            
+          </ul>
+        </div>
+      )}
     </div>
   );
 }
 
 export default MiApi;
+
+
+
+
+
+
+
+
 
 
   

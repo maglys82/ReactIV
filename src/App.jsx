@@ -1,12 +1,9 @@
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import { useState, useEffect } from 'react'
 import './App.css'
 import MiApi from './MiApi'
 
 import React from 'react';
 import Navbar from './Navbar';
-import CustomJumbotron from './Jumbotron'; 
+import CustomJumbotron from './Container'; 
 import Footer from './Footer';
 
 function App() {
@@ -17,6 +14,7 @@ function App() {
       </header>
       <main>
         <CustomJumbotron /> 
+        <MiApi /> 
       </main>
       <footer>
         <Footer />

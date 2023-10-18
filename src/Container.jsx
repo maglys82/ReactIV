@@ -9,12 +9,7 @@ function CustomJumbotron() {
     
       <Container>
         <h2>Bienvenidos!! </h2>
-        <h3>
-          Descubre que dia No vamos a Trabajar?
-        </h3>
-        <p>
-          <Button variant="primary">¡Comencemos!</Button>
-        </p>
+        
       </Container>
     
   );
