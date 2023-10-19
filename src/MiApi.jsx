@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-function MiApi() {
+function MiApi(props) {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [loaded, setLoaded] = useState(false);
@@ -10,6 +10,7 @@ function MiApi() {
     fetch('https://api.victorsanmartin.com/feriados/en.json')
       .then((response) => response.json())
       .then((responseData) => {
+        props.setAppData(responseData.data)
         setData(responseData.data);
         setLoading(false);
       })
