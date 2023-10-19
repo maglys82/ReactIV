@@ -15,7 +15,7 @@ function Buscador({ data, onSearch }) {
     <div>
       <input
         type="text"
-        placeholder="Buscar por Tipo"
+        placeholder="Buscar por Tipo, como civil religioso e irrenunciable"
         value={filtro}
         onChange={InputChange}
       />
