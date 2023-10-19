@@ -41,3 +41,13 @@
   color: #888;
 }
 
+.btn button {
+  margin-bottom: 2rem;
+  margin-top: 3rem;
+  background-color: blue;
+}
+
+img{
+  width: 150px;
+  height: 100px;
+}

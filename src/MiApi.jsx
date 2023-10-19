@@ -22,8 +22,8 @@ function MiApi() {
   }, [loaded]);
 
   return (
-    <div>
-      <button onClick={() => setLoaded(true)}>Comencemos</button>
+    <div className='btn'  >
+      <button onClick={() => setLoaded(true)}>Iniciar</button>
       {loaded && loading && <p>Cargando datos...</p>}
       {loaded && !loading && (
         <div>
